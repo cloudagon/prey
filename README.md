@@ -20,7 +20,7 @@ async def main():
     await _(f"mkdir /tmp/${name}")
 ```
 
-A tool for writing shell scripts in Python. Inspired by [google/zx](https://github.com/google/zx). This package provides a wrapper around `asyncio.subprocess` and escapes arguments.
+A tool for writing shell scripts in Python. Inspired by [google/zx](https://github.com/google/zx). This package provides a wrapper around `asyncio.subprocess`. If you're looking for a more complete solution you may want to check out [zxpy](https://github.com/tusharsadhwani/zxpy).
 
 
 ## Install
