@@ -37,9 +37,7 @@ jobs:
 
       # Install this package (root)
       - name: Install library
-        run: |
-          poetry install --no-interaction
-          poetry run generate
+        run: poetry install --no-interaction
 
       - name: Run examples
         run: poetry run pytest tests

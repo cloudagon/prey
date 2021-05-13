@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "prey"
-version = "0.1.0"
+version = "0.1.1"
 description = "A tool for writing shell scripts in python."
 authors = ["Sachin Raja <sachinraja2349@gmail.com>"]
 readme = "README.md"
+repository="https://github.com/cloudagon/prey"
 
 [tool.poetry.scripts]
 prey =  "bin.prey:main"
