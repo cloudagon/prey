@@ -39,8 +39,8 @@ jobs:
       - name: Install library
         run: poetry install --no-interaction
 
-      - name: Run examples
-        run: poetry run pytest tests
+      - name: Run example
+        run: poetry run prey examples/colorama.py
 
       - name: Run linter
         run: poetry run black . --check
