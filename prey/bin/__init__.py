@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import asyncio
-from prey import execute, cd
+from prey import x, cd
 
 
 def main():
@@ -10,7 +10,7 @@ def main():
 
     colorama.init()
 
-    globals()["x"] = execute
+    globals()["x"] = x
     globals()["cd"] = cd
     globals()["request"] = requests.session.request
     globals()["colorama"] = colorama
@@ -25,8 +25,7 @@ def main():
     try:
         script = open(filepath).read()
     except FileNotFoundError:
-        print(f"No such file or directory: {filepath}")
-        return
+        return print(f"No such file or directory: {filepath}")
 
     ldict = {}
 
