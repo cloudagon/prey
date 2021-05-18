@@ -2,12 +2,12 @@
 
 
 async def main():
-    await _("cat pyproject.toml | grep name")
+    await x("cat pyproject.toml | grep name")
 
-    branch = await _("git branch --show-current")
-    await _(f"dep deploy --branch={branch}")
+    branch = await x("git branch --show-current")
+    await x(f"dep deploy --branch={branch}")
 
-    await _(
+    await x(
         [
             "sleep 1; echo 1",
             "sleep 2; echo 2",
@@ -16,4 +16,4 @@ async def main():
     )
 
     name = "foo"
-    await _(f"mkdir /tmp/{name}")
+    await x(f"mkdir /tmp/{name}")

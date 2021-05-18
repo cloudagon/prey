@@ -3,12 +3,12 @@
 #!/usr/bin/env prey
 
 async def main():
-    await _("cat pyproject.toml | grep name")
+    await x("cat pyproject.toml | grep name")
 
-    branch = await _("git branch --show-current")
-    await _(f"dep deploy --branch={branch}")
+    branch = await x("git branch --show-current")
+    await x(f"dep deploy --branch={branch}")
 
-    await _(
+    await x(
         [
             "sleep 1; echo 1",
             "sleep 2; echo 2",
@@ -17,7 +17,7 @@ async def main():
     )
 
     name = "foo bar"
-    await _(f"mkdir /tmp/${name}")
+    await x(f"mkdir /tmp/${name}")
 ```
 
 A tool for writing shell scripts in Python. Inspired by [google/zx](https://github.com/google/zx). This package provides a wrapper around `asyncio.subprocess`. If you're looking for a more complete solution you may want to check out [zxpy](https://github.com/tusharsadhwani/zxpy).
@@ -50,12 +50,12 @@ Or via the `prey` executable:
 ```bash
 prey ./script.py
 ```
-When using `prey` via the executable or a shebang, all of the functions (`_`, `colorama`, `request`, etc) are available wihtout any imports.
+When using `prey` via the executable or a shebang, all of the functions (`x`, `colorama`, `request`, etc) are available wihtout any imports.
 
-### `await _("command")`
+### `await x("command")`
 Asychronously executes a given string using the `create_subprocess_shell` function from the `asyncio.subprocess` module and returns the output.
 ```py
-count = int(await _("ls -1 | wc -l"))
+count = int(await x("ls -1 | wc -l"))
 print(f"Files count: {count}")
 ```
 
@@ -63,7 +63,7 @@ print(f"Files count: {count}")
 Changes the current working directory.
 ```py
 cd("/tmp")
-await _('pwd') # outputs /tmp
+await x('pwd') # outputs /tmp
 ```
 
 ### colorama package
@@ -80,15 +80,15 @@ html = await response.text()
 ```
 
 ### Importing from other scripts
-It is possible to make use of `_` and other functions via explicit imports:
+It is possible to make use of `x` and other functions via explicit imports:
 ```py
 #!/usr/bin/env prey
-from prey import _
-await _('date')
+from prey import x
+await x('date')
 ```
 
 ### Passing env variables
 ```py
 os.environ["FOO"] = "bar"
-await _('echo $FOO')
+await x('echo $FOO')
 ```

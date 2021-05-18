@@ -2,7 +2,7 @@
 
 
 async def main():
-    await _(
+    await x(
         [
             # be sure to reset styles or everything after it will still be styled
             f"echo {colorama.Fore.RED} this is red{colorama.Style.RESET_ALL}",

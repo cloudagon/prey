@@ -5,4 +5,4 @@ async def main():
     import os
 
     os.environ["FOO"] = "bar"
-    await _("echo $FOO")
+    await x("echo $FOO")

@@ -2,5 +2,5 @@
 
 
 async def main():
-    count = int(await _("ls -1 | wc -l"))
+    count = int(await x("ls -1 | wc -l"))
     print(f"Files count: {count}")

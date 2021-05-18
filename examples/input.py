@@ -3,4 +3,4 @@
 
 async def main():
     word = input("Give me a word: ")
-    await _(f"echo {word}")
+    await x(f"echo {word}")

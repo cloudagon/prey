@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import asyncio
-from prey import _, cd
+from prey import execute, cd
 
 
 def main():
@@ -10,7 +10,7 @@ def main():
 
     colorama.init()
 
-    globals()["_"] = _
+    globals()["x"] = execute
     globals()["cd"] = cd
     globals()["request"] = requests.session.request
     globals()["colorama"] = colorama

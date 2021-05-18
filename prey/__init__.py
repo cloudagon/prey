@@ -1,4 +1,4 @@
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 import asyncio
 from asyncio.subprocess import PIPE
@@ -30,9 +30,6 @@ async def execute(cmd: Union[Command, list[Command]]):
         return await execute_many(cmd)
 
     return await execute_one(cmd)
-
-
-_ = execute
 
 
 def cd(filepath: str):

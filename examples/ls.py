@@ -2,7 +2,7 @@
 
 
 async def main():
-    await _("ls -a")
+    await x("ls -a")
     cd("..")
-    a = await _("ls")
+    a = await x("ls")
     await asyncio.sleep(2)
